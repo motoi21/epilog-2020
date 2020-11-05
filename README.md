@@ -22,12 +22,13 @@
 
 
 ## profiles テーブル
-|Column                 |Type     |Options                       |
-|-----------------------|---------|------------------------------|
-| introduction          | text    |                              |
-| user_image            |         | ActiveStorage,AWSを使用       |
-| category_id           | integer | null:false, ActiveHashを使用  |
-| genre_id              | integer | null: false, ActiveHashを使用 |
+|Column                 |Type        |Options                       |
+|-----------------------|------------|------------------------------|
+| introduction          | text       |                              |
+| user_image            |            | ActiveStorage,AWSを使用       |
+| category_id           | integer    | null:false, ActiveHashを使用  |
+| genre_id              | integer    | null: false, ActiveHashを使用 |
+| user                  | references | foreign_key: true            |
 
 ## Association
 - belongs_to :user
