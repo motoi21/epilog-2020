@@ -10,17 +10,27 @@
 | email                 | string  | null: false, unique; true    |
 | password              | string  | null: false                  |
 | password_confirmation | string  | null: false                  |
-| introduction          | text    |                              |
-| user_image            |         | ActiveStorage,AWSを使用       |
-| category_id           | integer | null:false, ActiveHashを使用  |
-| genre_id              | integer | null: false, ActiveHashを使用 |
+
 
 ### Association
+- has_one  :profile
 - has_many :drawings
 - has_many :reviews
 - has_many :offers
 - has_many :purchases
 
+
+
+## profile テーブル
+|Column                 |Type     |Options                       |
+|-----------------------|---------|------------------------------|
+| introduction          | text    |                              |
+| user_image            |         | ActiveStorage,AWSを使用       |
+| category_id           | integer | null:false, ActiveHashを使用  |
+| genre_id              | integer | null: false, ActiveHashを使用 |
+
+## Association
+- belongs_to :user
 - belongs_to_active_hash :category
 - belongs_to_active_hash :genre
 
