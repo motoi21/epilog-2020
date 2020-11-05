@@ -5,4 +5,6 @@ class Genre < ActiveHash::Base
     { id: 3, name: 'アナログ' },
     { id: 4, name: 'デジタル・アナログ両方' }
   ]
+  include ActiveHash::Associations
+  has_many :profiles
 end
