@@ -21,7 +21,7 @@
 
 
 
-## profile テーブル
+## profiles テーブル
 |Column                 |Type     |Options                       |
 |-----------------------|---------|------------------------------|
 | introduction          | text    |                              |
