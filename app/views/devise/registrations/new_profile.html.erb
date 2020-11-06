@@ -5,7 +5,7 @@
       <h5>プロフィールを作成しよう！</h5>
     </div>
     <div class='account-page__inner--right user-form'>
-      <%= form_with model: @profile, as: resource_name, url: user_registration_path, local: true do |f|%>
+      <%= form_with model: @profile, local: true do |f|%>
         <%= render 'shared/error_messages', model: f.object %>
         
         <div class='field'>
