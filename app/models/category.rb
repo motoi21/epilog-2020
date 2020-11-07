@@ -8,4 +8,5 @@ class Category < ActiveHash::Base
 
   include ActiveHash::Associations
   has_many :profiles
+  has_many :drawings
 end
