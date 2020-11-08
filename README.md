@@ -41,7 +41,7 @@
 |--------------------|------------|------------------------------|
 | drawing_image      |            | ActiveStorage,AWSを使用       |
 | title              | text       | null: false                  |
-| description        | text       | null: false                  |
+| description        | text       |                              |
 | category_id        | integer    | null: false, ActiveHashを使用 |
 | genre_id           | integer    | null: false, ActiveHashを使用 |
 | production_date    | date       | null: false, ActiveHashを使用 |
