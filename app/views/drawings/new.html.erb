@@ -26,7 +26,7 @@
 			<div class="form-group">
 				<h5 class="input_title">作品説明 <span class="required not">任意</span></h5>
 				<%= f.text_area :description, class: "form-control", maxlength: 3000 %>
-				<div id=text-length>
+				<div class="text-count" id="text-length">
 				  <p class="text-center">現在<span class="text-length">0</span>/3000文字</p>
 				</div>
 
@@ -119,8 +119,8 @@
 			</div>
 			
 			<div class="sell-btn-contents">
-      	<%= f.submit "投稿する" ,class:"sell-btn" %>
       	<%=link_to 'もどる', root_path, class:"back-btn" %>
+				<%= f.submit "投稿する" ,class:"sell-btn" %>
     	</div>
 
 		<% end %>
