@@ -30,29 +30,28 @@ RSpec.describe Drawing, type: :model do
       it 'categoryが"---"だと登録できないこと' do
         @drawing.category_id = 1
         @drawing.valid?
-        expect(@drawing.errors.full_messages).to include("Category Select")
+        expect(@drawing.errors.full_messages).to include('Category Select')
       end
       it 'genreが"---"だと登録できないこと' do
         @drawing.genre_id = 1
         @drawing.valid?
-        expect(@drawing.errors.full_messages).to include("Genre Select")
+        expect(@drawing.errors.full_messages).to include('Genre Select')
       end
       it 'priceが半角数字でないと投稿できないこと' do
-        @drawing.price = "１００"
+        @drawing.price = '１００'
         @drawing.valid?
-        expect(@drawing.errors.full_messages).to include("Price Out of setting range")
+        expect(@drawing.errors.full_messages).to include('Price Out of setting range')
       end
       it 'priceが100未満だと投稿できないこと' do
         @drawing.price = 99
         @drawing.valid?
-        expect(@drawing.errors.full_messages).to include("Price Out of setting range")
+        expect(@drawing.errors.full_messages).to include('Price Out of setting range')
       end
       it 'priceが9999999を超えると投稿できないこと' do
-        @drawing.price = 10000000
+        @drawing.price = 10_000_000
         @drawing.valid?
-        expect(@drawing.errors.full_messages).to include("Price Out of setting range")
+        expect(@drawing.errors.full_messages).to include('Price Out of setting range')
       end
-        
     end
   end
 end
