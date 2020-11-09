@@ -6,6 +6,8 @@ class CreateDrawings < ActiveRecord::Migration[6.0]
       t.integer :category_id, null: false
       t.integer :genre_id, null: false
       t.date :production_date, null: false
+      t.string :height
+      t.string :width
       t.integer :price
       t.integer :shipping_method_id
       t.references :user, foreign_key: true

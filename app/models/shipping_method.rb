@@ -7,6 +7,6 @@ class ShippingMethod < ActiveHash::Base
     { id: 5, name: 'AI(Illustrator)' },
     { id: 6, name: '郵送' }
   ]
+  include ActiveHash::Associations
+  has_many :drawings
 end
-include ActiveHash::Associations
-has_many :drawings

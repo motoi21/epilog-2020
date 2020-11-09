@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 2020_11_08_063339) do
     t.integer "category_id", null: false
     t.integer "genre_id", null: false
     t.date "production_date", null: false
+    t.string "height"
+    t.string "width"
     t.integer "price"
     t.integer "shipping_method_id"
     t.bigint "user_id"

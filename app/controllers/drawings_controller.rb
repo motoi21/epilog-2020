@@ -17,6 +17,6 @@ class DrawingsController < ApplicationController
 
   private
   def drawing_params
-    params.require(:drawing).permit(:image, :title, :description, :production_date, :category_id, :genre_id, :price, :shipping_method_id).merge(user_id: current_user.id)
+    params.require(:drawing).permit(:image, :title, :description, :production_date, :category_id, :genre_id, :price, :shipping_method_id, :height, :width).merge(user_id: current_user.id)
   end
 end
