@@ -19,13 +19,13 @@
 
 			<div class="form-group">
 				<h5 class="input_title">作品タイトル <span class="required">必須</span></h5>
-				<%= f.text_field :title, class: "form-control" %>
+				<%= f.text_field :title, class: "form-control", maxlength: 40 %>
 				<small>※最大40文字</small>
 			</div>
 
 			<div class="form-group">
 				<h5 class="input_title">作品説明 <span class="required not">任意</span></h5>
-				<%= f.text_area :description, class: "form-control" %>
+				<%= f.text_area :description, class: "form-control", maxlength: 3000 %>
 				<p class="text-center">現在<span class="js__text_length">0</span>/3000文字</p>
 			</div>
 
