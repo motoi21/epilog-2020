@@ -41,12 +41,14 @@
 |--------------------|------------|------------------------------|
 | drawing_image      |            | ActiveStorage,AWSを使用       |
 | title              | text       | null: false                  |
-| description        | text       | null: false                  |
+| description        | text       |                              |
 | category_id        | integer    | null: false, ActiveHashを使用 |
 | genre_id           | integer    | null: false, ActiveHashを使用 |
 | production_date    | date       | null: false, ActiveHashを使用 |
 | price              | integer    |                              |
 | shipping_method_id | integer    | ActiveHashを使用              |
+| height             | string     |                              |
+| width              | string     |                              |
 | user               | references | foreign_key :true            |
 
 ## Association

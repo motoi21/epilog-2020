@@ -1,4 +1,4 @@
-class Genre < ActiveHash::Base 
+class Genre < ActiveHash::Base
   self.data = [
     { id: 1, name: '---' },
     { id: 2, name: 'イラスト' },
@@ -14,4 +14,5 @@ class Genre < ActiveHash::Base
   ]
   include ActiveHash::Associations
   has_many :profiles
+  has_many :drawings
 end

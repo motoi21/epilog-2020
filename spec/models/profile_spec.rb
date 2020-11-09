@@ -15,12 +15,12 @@ RSpec.describe Profile, type: :model do
       it 'カテゴリー選択で"---"を選択すると登録できない' do
         @profile.category_id = 1
         @profile.valid?
-        expect(@profile.errors.full_messages).to include("Category Select")
+        expect(@profile.errors.full_messages).to include('Category Select')
       end
       it 'ジャンル選択で"---"を選択すると登録できない' do
         @profile.genre_id = 1
         @profile.valid?
-        expect(@profile.errors.full_messages).to include("Genre Select")
+        expect(@profile.errors.full_messages).to include('Genre Select')
       end
     end
   end
