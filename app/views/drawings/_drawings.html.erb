@@ -1,0 +1,22 @@
+<li class='list'>
+    <%= link_to drawing_path(drawing.id) do %>
+    <div class='drawing-img-content'>
+      <%= image_tag(drawing.image, class: "item-img") if drawing.image.attached? %>
+    </div>
+    <div class='item-info'>
+      <h3 class='item-name'>
+        <%= drawing.title %>
+      </h3>
+      
+    <% if drawing.price %>
+      <div class='item-price'>
+        <span><%= item.price %>円</span>
+        <div class='star-btn'>
+          <%= image_tag "star.png", class:"star-icon" %>
+          <span class='star-count'>0</span>
+        </div>
+      </div>
+    <% end %>  
+    </div>
+    <% end %>
+</li>
