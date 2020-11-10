@@ -2,7 +2,8 @@ class DrawingsController < ApplicationController
   before_action :authenticate_user!, only: [:new]
 
   def index
-    @drawings = Drawing.all
+    @drawings_with_price = Drawing.where.not(price: nil)
+    @drawings_analog = Drawing.where(category_id: 3)
   end
 
   def new
