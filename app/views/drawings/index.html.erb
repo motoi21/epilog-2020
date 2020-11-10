@@ -11,6 +11,61 @@
         <% end %>
       <% end %>
     </ul>
+  
+    <h2 class='title'>絵(アナログ)</h2>
+    <ul class='drawing-lists'>
+      <%  if @drawings_analog.exists?  %>
+        <% @drawings_analog.each do |drawing| %>
+
+        <%= render partial: 'drawings',locals: { drawing: drawing } %>
+
+        <% end %>
+      <% end %>
+    </ul>
+
+    <h2 class='title'>イラスト</h2>
+    <ul class='drawing-lists'>
+      <%  if @drawings_illustration.exists?  %>
+        <% @drawings_illustration.each do |drawing| %>
+
+        <%= render partial: 'drawings',locals: { drawing: drawing } %>
+
+        <% end %>
+      <% end %>
+    </ul>
+
+    <h2 class='title'>漫画</h2>
+    <ul class='drawing-lists'>
+      <%  if @drawings_manga.exists?  %>
+        <% @drawings_manga.each do |drawing| %>
+
+        <%= render partial: 'drawings',locals: { drawing: drawing } %>
+
+        <% end %>
+      <% end %>
+    </ul>
+
+    <h2 class='title'>似顔絵</h2>
+    <ul class='drawing-lists'>
+      <%  if @drawings_portrait.exists?  %>
+        <% @drawings_portrait.each do |drawing| %>
+
+        <%= render partial: 'drawings',locals: { drawing: drawing } %>
+
+        <% end %>
+      <% end %>
+    </ul>
+
+    <h2 class='title'>ポスター</h2>
+    <ul class='drawing-lists'>
+      <%  if @drawings_poster.exists?  %>
+        <% @drawings_poster.each do |drawing| %>
+
+        <%= render partial: 'drawings',locals: { drawing: drawing } %>
+
+        <% end %>
+      <% end %>
+    </ul>
   </div>
 <% if user_signed_in?%>
   <h2>ログインしています</h2>
