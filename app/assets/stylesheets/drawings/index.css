@@ -9,9 +9,11 @@
 }
 
 .drawing-contents>.title {
-  font-size: 5vh;
+  font-size: 3vh;
   line-height: 1.4;
   font-weight: bold;
+  color: gray;
+
 }
 
 .drawing-contents>.subtitle {
