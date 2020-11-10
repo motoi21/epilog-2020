@@ -65,5 +65,9 @@
   justify-content: space-between;
 }
 
+.drawing-user {
+  color: gray;
+}
+
 
 /* //商品一覧 */
