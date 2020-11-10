@@ -1,0 +1,83 @@
+<%# 商品の概要 %>
+<div class="item-show">
+  <div class="item-box">
+    <h2 class="name">
+      <%= @drawing.title %>
+    </h2>
+    <div class='item-img-content'>
+      <%= image_tag(@drawing.image ,class:"item-box-img") if @drawing.image.attached? %>
+
+    </div>
+
+    <% if @drawing.price %>
+    <div class="item-price-box">
+      <span class="item-price">
+        <%= "¥ #{@drawing.price}" %> 
+      </span>  
+    </div>
+    <% end %>
+
+    
+
+    <div class="item-explain-box">
+      <span><%= @drawing.description %></span>
+    </div>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">出品者</th>
+          <td class="detail-value"><%= @drawing.user.nickname %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">制作年月日</th>
+          <td class="detail-value"><%= @drawing.production_date %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">カテゴリー</th>
+          <td class="detail-value"><%= @drawing.category.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">ジャンル</th>
+          <td class="detail-value"><%= @drawing.genre.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">納品形式</th>
+          <td class="detail-value"><%= @drawing.shipping_method.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">縦</th>
+          <td class="detail-value"><%= @drawing.width %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">横</th>
+          <td class="detail-value"><%= @drawing.height %></td>
+        </tr>
+      </tbody>
+    </table>
+    
+  </div>
+  <%# /商品の概要 %>
+
+  <div class="comment-box">
+    <form>
+      <textarea class="comment-text"></textarea>
+      <p class="comment-warn">
+        相手のことを考え丁寧なコメントを心がけましょう。
+        <br>
+        不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      </p>
+      <button type="submit" class="comment-btn">
+        <span>コメントする<span>
+      </button>
+    </form>
+  </div>
+  <div class="links">
+    <a href="#" class="change-item-btn">
+      ＜ 前の商品
+    </a>
+    <a href="#" class="change-item-btn">
+      後ろの商品 ＞
+    </a>
+  </div>
+  <a href="#" class='another-item'><%= @drawing.genre.name %>をもっと見る</a>
+</div>
