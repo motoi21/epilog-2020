@@ -46,7 +46,13 @@
         </tr>
         <tr>
           <th class="detail-item">サイズ</th>
-              <td class="detail-value"><%= "横:#{@drawing.width }" %> × <%= "縦:#{@drawing.height }" %></td>
+          <% if @drawing.width != "" && @drawing.height != "" %>
+            <td class="detail-value">
+              <%= "横:#{@drawing.width }" %> × <%= "縦:#{@drawing.height }" %>
+            </td>
+          <% else %>
+            <td class="detail-value">---</td>
+          <% end %>
         </tr>
       </tbody>
     </table>
