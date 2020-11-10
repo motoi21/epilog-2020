@@ -1,0 +1,22 @@
+<li class='list'>
+    <%= link_to '#' do %>
+    <div class='drawing-img-content'>
+      <%= image_tag(drawing.image, class: "drawing-img") if drawing.image.attached? %>
+    </div>
+    
+    <div class='drawing-info'>
+      <h3 class='drawing-title'>
+        <%= drawing.title %>
+      </h3>
+    <% end %>
+      <% if drawing.price %>
+        <div class='drawing-price'>
+          <span><%= drawing.price %>円</span>
+        </div>
+      <% end %>
+
+      <div class='drawing-user'>
+          <span>created by  <%= link_to drawing.user.nickname, '#' %></span>
+      </div>  
+    </div>
+</li>

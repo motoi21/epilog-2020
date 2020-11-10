@@ -1,5 +1,72 @@
 <h1>トップページ</h1>
-<%= link_to "新規投稿する", new_drawing_path %>
+<div class='drawing-contents'>
+    <h2 class='title'>新規出品作品</h2>
+      <%= link_to '新規投稿', new_drawing_path, class: "subtitle" %>
+    <ul class='drawing-lists'>
+      <%  if @drawings_with_price.exists?  %>
+        <% @drawings_with_price.each do |drawing| %>
+
+        <%= render partial: 'drawings',locals: { drawing: drawing } %>
+
+        <% end %>
+      <% end %>
+    </ul>
+  
+    <h2 class='title'>絵(アナログ)</h2>
+    <ul class='drawing-lists'>
+      <%  if @drawings_analog.exists?  %>
+        <% @drawings_analog.each do |drawing| %>
+
+        <%= render partial: 'drawings',locals: { drawing: drawing } %>
+
+        <% end %>
+      <% end %>
+    </ul>
+
+    <h2 class='title'>イラスト</h2>
+    <ul class='drawing-lists'>
+      <%  if @drawings_illustration.exists?  %>
+        <% @drawings_illustration.each do |drawing| %>
+
+        <%= render partial: 'drawings',locals: { drawing: drawing } %>
+
+        <% end %>
+      <% end %>
+    </ul>
+
+    <h2 class='title'>漫画</h2>
+    <ul class='drawing-lists'>
+      <%  if @drawings_manga.exists?  %>
+        <% @drawings_manga.each do |drawing| %>
+
+        <%= render partial: 'drawings',locals: { drawing: drawing } %>
+
+        <% end %>
+      <% end %>
+    </ul>
+
+    <h2 class='title'>似顔絵</h2>
+    <ul class='drawing-lists'>
+      <%  if @drawings_portrait.exists?  %>
+        <% @drawings_portrait.each do |drawing| %>
+
+        <%= render partial: 'drawings',locals: { drawing: drawing } %>
+
+        <% end %>
+      <% end %>
+    </ul>
+
+    <h2 class='title'>ポスター</h2>
+    <ul class='drawing-lists'>
+      <%  if @drawings_poster.exists?  %>
+        <% @drawings_poster.each do |drawing| %>
+
+        <%= render partial: 'drawings',locals: { drawing: drawing } %>
+
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
 <% if user_signed_in?%>
   <h2>ログインしています</h2>
   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
