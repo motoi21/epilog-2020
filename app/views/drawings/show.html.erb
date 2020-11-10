@@ -45,12 +45,8 @@
           <td class="detail-value"><%= @drawing.shipping_method.name %></td>
         </tr>
         <tr>
-          <th class="detail-item">縦</th>
-          <td class="detail-value"><%= @drawing.width %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">横</th>
-          <td class="detail-value"><%= @drawing.height %></td>
+          <th class="detail-item">サイズ</th>
+              <td class="detail-value"><%= "横:#{@drawing.width }" %> × <%= "縦:#{@drawing.height }" %></td>
         </tr>
       </tbody>
     </table>
