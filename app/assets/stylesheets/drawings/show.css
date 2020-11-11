@@ -32,12 +32,16 @@
   background-color: rgb(205, 202, 202);
   object-fit: contain;
 }
-
+.item-command-box {
+  flex-direction: column;
+  justify-content: space-between;
+}
 .item-price-box {
   margin: 25px 0px;
-  display: flex;
-  align-items: center;
   flex-direction: column;
+}
+.commands {
+  margin: 25px 0px;
 }
 
 .item-price-box>.item-price {
@@ -46,14 +50,10 @@
   text-align: center;
 }
 
-.item-price-box>.item-postage {
-  font-size: 16px;
-}
-
 
 .item-red-btn {
   text-align: center;
-  background-color: #ea352d;
+  background-color: #FF6E3A;
   font-size: 24px;
   font-weight: bold;
   color: #FFF;
@@ -182,8 +182,8 @@
 
 .comment-btn {
   line-height: 48px;
-  background-color: #3CCACE;
-  border: 1px solid #3CCACE;
+  background-color: #58bdf0;
+  border: 1px solid #58bdf0;
   color: #fff;
   width: 50%;
   min-width: 150px;
@@ -211,13 +211,13 @@
 .change-item-btn {
   font-size: 30px;
   text-decoration: none;
-  color: #3CCACE;
+  color: #58bdf0;
 }
 
 .another-item {
   display: block;
   margin: 30px 0px 8px;
-  color: #3CCACE;
+  color: #58bdf0;
   text-decoration: none;
   font-weight: bold;
   font-size: 23px;
