@@ -28,10 +28,16 @@ class DrawingsController < ApplicationController
   end
 
   def edit
-    drawing = Drawing.find(params[:id])
+    @drawing = Drawing.find(params[:id])
   end
 
   def update
+    @drawing = Drawing.find(params[:id])
+    if @drawing.update(drawing_params)
+      redirect_to drawing_path(@drawing.id)
+    else 
+      render :edit
+    end
   end
 
   private
