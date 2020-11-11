@@ -6,17 +6,25 @@
     </h2>
     <div class='item-img-content'>
       <%= image_tag(@drawing.image ,class:"item-box-img") if @drawing.image.attached? %>
-
     </div>
 
-    <% if @drawing.price %>
-    <div class="item-price-box">
-      <span class="item-price">
-        <%= "¥ #{@drawing.price}" %> 
-      </span>  
+    <div class="item-command-box">
+      <div class="commands">
+        <% if user_signed_in? && current_user.id == @drawing.user_id %>
+          <%= link_to '編集', '#', method: :get, class: "item-red-btn" %>
+          <%= link_to '削除', '#', method: :delete, class:'item-destroy' %>
+        <% elsif user_signed_in? && current_user.id != @drawing.user_id  %>
+          <%= link_to '作品を購入する', '#' ,class:"item-red-btn"%>
+        <% end %>
+      </div>
+      <div class="item-price">
+        <% if @drawing.price %>
+          <span class="item-price">
+            <%= "¥ #{@drawing.price}" %> 
+          </span>  
+        <% end %>
+      </div>
     </div>
-    <% end %>
-
     
 
     <div class="item-explain-box">

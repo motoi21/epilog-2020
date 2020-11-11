@@ -61,10 +61,6 @@
   padding: 2vh 10vw;
 }
 
-.or-text {
-  font-size: 20px;
-}
-
 .item-destroy {
   background-color: lightgray;
   text-align: center;
@@ -100,7 +96,7 @@
 
 .detail-table {
   margin-bottom: 30px;
-  width: 100%;
+  width: 70%;
 }
 
 .detail-item {
