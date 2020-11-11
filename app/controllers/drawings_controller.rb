@@ -1,5 +1,6 @@
 class DrawingsController < ApplicationController
   before_action :authenticate_user!, only: [:new]
+  before_action :set_drawing, only: [:show, :edit, :update]
 
   def index
     @drawings_with_price = Drawing.where.not(price: nil)
@@ -24,15 +25,12 @@ class DrawingsController < ApplicationController
   end
 
   def show
-    @drawing = Drawing.find(params[:id])
   end
 
   def edit
-    @drawing = Drawing.find(params[:id])
   end
 
   def update
-    @drawing = Drawing.find(params[:id])
     if @drawing.update(drawing_params)
       redirect_to drawing_path(@drawing.id)
     else 
@@ -44,5 +42,9 @@ class DrawingsController < ApplicationController
 
   def drawing_params
     params.require(:drawing).permit(:image, :title, :description, :production_date, :category_id, :genre_id, :price, :shipping_method_id, :height, :width).merge(user_id: current_user.id)
+  end
+
+  def set_drawing
+    @drawing = Drawing.find(params[:id])
   end
 end
