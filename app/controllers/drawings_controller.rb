@@ -39,6 +39,9 @@ class DrawingsController < ApplicationController
     end
   end
 
+  def destroy
+  end
+
   private
 
   def drawing_params
