@@ -1,5 +1,4 @@
 class PurchasesController < ApplicationController
-  def new
-    
+  def new    
   end
 end
