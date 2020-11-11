@@ -1,7 +1,8 @@
 class DrawingsController < ApplicationController
   before_action :authenticate_user!, only: [:new]
   before_action :set_drawing, only: [:show, :edit, :update]
-
+  before_action :move_to_index, only: [:edit]
+  
   def index
     @drawings_with_price = Drawing.where.not(price: nil)
     @drawings_analog = Drawing.where(category_id: 3)
@@ -46,5 +47,11 @@ class DrawingsController < ApplicationController
 
   def set_drawing
     @drawing = Drawing.find(params[:id])
+  end
+
+  def move_to_index
+    unless user_signed_in? && current.user.id == @drawing.user.id
+      redirect_to root_path
+    end
   end
 end
