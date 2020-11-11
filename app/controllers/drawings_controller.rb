@@ -1,7 +1,7 @@
 class DrawingsController < ApplicationController
   before_action :authenticate_user!, only: [:new]
-  before_action :set_drawing, only: [:show, :edit, :update]
-  before_action :move_to_index, only: [:edit]
+  before_action :set_drawing, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_index, only: [:edit, :destroy]
   
   def index
     @drawings_with_price = Drawing.where.not(price: nil)
@@ -39,6 +39,11 @@ class DrawingsController < ApplicationController
     end
   end
 
+  def destroy
+    @drawing.destroy
+    redirect_to root_path
+  end
+
   private
 
   def drawing_params
@@ -50,7 +55,7 @@ class DrawingsController < ApplicationController
   end
 
   def move_to_index
-    unless user_signed_in? && current.user.id == @drawing.user.id
+    unless user_signed_in? && current_user.id == @drawing.user.id
       redirect_to root_path
     end
   end

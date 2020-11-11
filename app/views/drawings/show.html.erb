@@ -12,7 +12,7 @@
       <div class="commands">
         <% if user_signed_in? && current_user.id == @drawing.user_id %>
           <%= link_to '編集', edit_drawing_path(@drawing.id), method: :get, class: "item-red-btn" %>
-          <%= link_to '削除', '#', method: :delete, class:'item-destroy' %>  
+          <%= link_to '削除', drawing_path(@drawing.id), method: :delete, class:'item-destroy' %>  
         <% end %>
       </div>
     </div>
