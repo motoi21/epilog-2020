@@ -28,6 +28,7 @@ class DrawingsController < ApplicationController
   end
 
   def edit
+    drawing = Drawing.find(params[:id])
   end
 
   def update
