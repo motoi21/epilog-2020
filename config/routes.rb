@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     post 'profiles', to: 'users/registrations#create_profile'
   end
   root to: "drawings#index"
-  resources :drawings, only: [:index, :new, :create, :show]
+  resources :drawings, only: [:index, :new, :create, :show, :edit, :update]
 end

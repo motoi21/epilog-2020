@@ -11,7 +11,7 @@
     <div class="item-command-box">
       <div class="commands">
         <% if user_signed_in? && current_user.id == @drawing.user_id %>
-          <%= link_to '編集', '#', method: :get, class: "item-red-btn" %>
+          <%= link_to '編集', edit_drawing_path(@drawing.id), method: :get, class: "item-red-btn" %>
           <%= link_to '削除', '#', method: :delete, class:'item-destroy' %>  
         <% end %>
       </div>
