@@ -27,6 +27,12 @@ class DrawingsController < ApplicationController
     @drawing = Drawing.find(params[:id])
   end
 
+  def edit
+  end
+
+  def update
+  end
+
   private
 
   def drawing_params
