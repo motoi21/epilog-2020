@@ -23,6 +23,10 @@ class DrawingsController < ApplicationController
     end
   end
 
+  def show
+    @drawing = Drawing.find(params[:id])
+  end
+
   private
 
   def drawing_params
