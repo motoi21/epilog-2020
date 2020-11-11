@@ -63,10 +63,14 @@
             <%= "¥ #{@drawing.price}" %> 
           </span>
         <% end %>
-        <% if @drawing.price && user_signed_in? && current_user.id != @drawing.user_id  %>
-          <%= link_to '作品を購入する', '#' ,class:"item-red-btn"%>
-        <% end %>  
     </div>
+        
+    <div class="commands">
+      <% if @drawing.price && user_signed_in? && current_user.id != @drawing.user_id  %>
+        <%= link_to '作品を購入する', '#' ,class:"item-red-btn"%>
+      <% end %>
+    </div>  
+    
     
     
   </div>

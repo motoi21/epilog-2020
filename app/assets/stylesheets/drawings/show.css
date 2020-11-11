@@ -39,9 +39,11 @@
 .item-price-box {
   margin: 25px 0px;
   flex-direction: column;
+  align-self: center;
 }
 .commands {
   margin: 25px 0px;
+  align-self: center;
 }
 
 .item-price-box>.item-price {
