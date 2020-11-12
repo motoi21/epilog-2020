@@ -2,7 +2,7 @@ class PurchasesController < ApplicationController
   def new
     @purchase = Purchase.new
   end
-  
+
   def create
     @purchase = Purchase.new
     if @purchase.save
@@ -11,4 +11,5 @@ class PurchasesController < ApplicationController
       render :new
     end
   end
+
 end
