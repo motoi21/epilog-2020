@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   end
   root to: "drawings#index"
   resources :drawings do
-    resources :purchases, only: [:new]
+    resources :purchases, only: [:new, :create]
   end
 end
