@@ -10,6 +10,9 @@ class PurchaseShipping
   end
 
   validates :prefecture_id, numericality: { other_than: 1, message: "Select" }
-end
 
-  
+  def save
+    purchase = Purchase.create(user_id: user_id, drawing_id: drawing_id)
+    Shipping.create(postal_code: postal_code, prefecture_id: prefecture_id, city: city, address: address, building: building, phone_number: phone_number, purchase_id: purchase_id)
+  end
+end
