@@ -1,11 +1,12 @@
 class PurchasesController < ApplicationController
   def new
-    @purchase = Purchase.new
+    @purchase_shipping = PurchaseShipping.new
   end
 
   def create
-    @purchase = Purchase.new
-    if @purchase.save
+    @purchase_shipping = PurchaseShipping.new
+    if @purchase_shipping.valid?
+      @purchase_shipping.save
       redirect_to root_path
     else
       render :new
