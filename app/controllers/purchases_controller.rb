@@ -1,6 +1,7 @@
 class PurchasesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_drawing, only: [:new, :create]
+  before_action :move_to_index, only: [:new, :create]
 
   def new
     @purchase_shipping = PurchaseShipping.new
@@ -24,6 +25,14 @@ class PurchasesController < ApplicationController
 
   def set_drawing
     @drawing = Drawing.find(params[:drawing_id])
+  end
+
+  def move_to_index
+    if user_signed_in? && current_user.id == @drawing.user.id
+      redirect_to root_path
+    elsif Purchase.exists?(drawing_id: @drawing.id)
+      redirect_to root_path
+    end
   end
 
   def pay_item
