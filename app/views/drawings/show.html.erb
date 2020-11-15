@@ -66,7 +66,7 @@
     </div>
         
     <div class="commands">
-      <% if @drawing.price && user_signed_in? && current_user.id != @drawing.user_id  %>
+      <% if @drawing.price && user_signed_in? && current_user.id != @drawing.user_id && !@drawing.purchase %>
         <%= link_to '作品を購入する', new_drawing_purchase_path(@drawing.id), class:"item-red-btn"%>
       <% end %>
     </div>  
