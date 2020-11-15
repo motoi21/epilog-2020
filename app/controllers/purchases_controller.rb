@@ -8,12 +8,7 @@ class PurchasesController < ApplicationController
   def create
     @purchase_shipping = PurchaseShipping.new(purchase_params)
     if @purchase_shipping.valid?
-      Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
-      Payjp.charge.create(
-        amount: purchase_params[:price],
-        card: purchase_params[:token],
-        currency: 'jpy'
-      )
+      pay_item
       @purchase_shipping.save
       redirect_to root_path
     else
@@ -28,5 +23,14 @@ class PurchasesController < ApplicationController
 
   def set_drawing
     @drawing = Drawing.find(params[:drawing_id])
+  end
+
+  def pay_item
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    Payjp.charge.create(
+      amount: purchase_params[:price],
+      card: purchase_params[:token],
+      currency: 'jpy'
+    )
   end
 end
