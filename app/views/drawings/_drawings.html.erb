@@ -16,7 +16,7 @@
       <% end %>
 
       <div class='drawing-user'>
-          <span>created by  <%= link_to drawing.user.nickname, '#' %></span>
+          <span>created by  <%= link_to drawing.user.nickname, user_path(drawing.user.id) %></span>
       </div>  
     </div>
 </li>
