@@ -68,6 +68,8 @@
     <div class="commands">
       <% if @drawing.price && user_signed_in? && current_user.id != @drawing.user_id && !@drawing.purchase %>
         <%= link_to '作品を購入する', new_drawing_purchase_path(@drawing.id), class:"item-red-btn"%>
+      <% elsif @drawing.purchase %>
+        <span class="item-red-btn">売却済み<span>
       <% end %>
     </div>  
     
