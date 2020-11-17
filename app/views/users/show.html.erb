@@ -1,0 +1,34 @@
+<div class="user-wrap">
+  <div class="user-header">
+    
+    <div class="content-wrap">
+      <div class="user-name">
+        <%= @user.nickname %> のマイページ
+      </div>
+      <ul class="user-nav-bar">
+        <li class="user-nav first-nav">
+          <%= link_to "自己紹介", "#", class: "user-nav-link" %>
+        </li>
+
+        <li class="user-nav">
+          <%= link_to "投稿一覧", "#", class: "user-nav-link" %>
+        </li>
+
+        <li class="user-nav">
+          <%= link_to "出品中の作品", "#", class: "user-nav-link" %>
+        </li>
+
+        <li class="user-nav">
+          <%= link_to "お仕事依頼", "#", class: "user-nav-link" %>
+        </li>
+
+        <li class="user-nav">
+          <%= link_to "設定", "#", class: "user-nav-link" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="user-header-line"></div>
+
+
