@@ -28,7 +28,37 @@
       </ul>
     </div>
   </div>
+  <div class="user-header-line"></div>
+  <div class="user-body">
+    <div class="user-self-intro">
+        <span><%= @user.profile.introduction %></span>
+    </div>
+        <ul class="user-action-info">
+          <li class="user-action-wrap">
+            <div class="title">
+              <span>得意なカテゴリー</span>
+            </div>
+            <div class="category">
+              <span><%= @user.profile.category.name %></span>
+            </div>
+          </li>
+          <li class="user-action-wrap">
+            <div class="title">
+              <span>得意なジャンル</span>
+            </div>
+            <div class="genre">
+              <span><%= @user.profile.genre.name %></span>
+            </div>
+          </li>
+          <li class="user-action-wrap">
+            <div class="title">
+              <span>完了した依頼数</span>
+            </div>
+            <div class="clips">
+              <span>8件</span>
+            </div>
+          </li>
+        </ul>
+    </div>
 </div>
-<div class="user-header-line"></div>
-
 
