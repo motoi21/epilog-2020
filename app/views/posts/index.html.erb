@@ -1,0 +1,4 @@
+
+<% @user.drawings.each do |drawing| %>
+  <%= render partial: 'posts',locals: { drawing: drawing } %>
+<% end %>
