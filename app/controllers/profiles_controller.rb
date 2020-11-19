@@ -1,12 +1,14 @@
 class ProfilesController < ApplicationController
   def edit
-    @profile.find(params[:profile_id])
+    @user = User.find(params[:id])
+    @profile = Profile.find_by(user_id: current_user.id)
   end
 
   def update
-    @profile.find(params[:profile_id])
+    @user = User.find(params[:id])
+    @profile = Profile.find_by(user_id: current_user.id)
     if @profile.update(profile_params)
-      redirect_to redirect_to user_path(current_user.id)
+      redirect_to user_path(current_user.id)
     else
       render :edit
     end
