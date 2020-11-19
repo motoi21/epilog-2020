@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
   root to: "drawings#index"
   resources :users, only: [:show, :edit, :update] do
-    resources :profile, only: [:edit, :update]
+    resources :profiles, only: [:edit, :update]
   end
   resources :drawings do
     resources :purchases, only: [:new, :create]
