@@ -12,6 +12,9 @@
       <% if drawing.price %>
         <div class='drawing-price'>
           <span><%= drawing.price %>円</span>
+          <% if drawing.purchase %>
+            <span class="required">売却済み</span>
+          <% end %>
         </div>
       <% end %>
 
