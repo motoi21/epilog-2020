@@ -1,0 +1,16 @@
+<li class='list'>
+    <%= link_to drawing_path(drawing.id) do %>
+    <div class='drawing-img-content'>
+      <%= image_tag(drawing.image, class: "drawing-img") if drawing.image.attached? %>
+    </div>
+    
+    <div class='drawing-info'>
+      <h3 class='drawing-title'>
+        <%= drawing.title %>
+      </h3>
+    <% end %>
+      <div class='drawing-user'>
+          <span>created at  <%= l drawing.created_at %></span>
+      </div>  
+    </div>
+</li>

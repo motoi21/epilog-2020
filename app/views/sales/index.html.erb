@@ -1,0 +1,7 @@
+<div class='drawing-contents'>
+    <ul class='drawing-lists'>
+      <% @user.drawings.where.not(price: nil).each do |drawing| %>
+        <%= render partial: 'sales',locals: { drawing: drawing } %>
+      <% end %>
+    </ul>
+</div>
