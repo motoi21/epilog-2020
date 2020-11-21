@@ -9,17 +9,14 @@
         <%= drawing.title %>
       </h3>
     <% end %>
-      <% if drawing.price %>
-        <div class='drawing-price'>
-          <span><%= drawing.price %>円</span>
-          <% if drawing.purchase %>
-            <span class="required">売却済み</span>
-          <% end %>
-        </div>
-      <% end %>
-
+      <div class='drawing-price'>
+        <span><%= drawing.price %>円</span>
+        <% if drawing.purchase %>
+          <span class="required">売却済み</span>
+        <% end %>
+      </div>
       <div class='drawing-user'>
-          <span>created by  <%= link_to drawing.user.nickname, user_path(drawing.user.id) %></span>
+          <span>created at  <%= l drawing.created_at %></span>
       </div>  
     </div>
 </li>

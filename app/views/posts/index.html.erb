@@ -1,0 +1,7 @@
+<div class='drawing-contents'>
+    <ul class='drawing-lists'>
+      <% @user.drawings.each do |drawing| %>
+        <%= render partial: 'posts',locals: { drawing: drawing } %>
+      <% end %>
+    </ul>
+</div>

@@ -7,6 +7,11 @@ Rails.application.routes.draw do
     post 'profiles', to: 'users/registrations#create_profile'
   end
   root to: "drawings#index"
+  resources :users, only: [:show, :edit, :update] do
+    resources :profiles, only: [:edit, :update]
+    resources :posts, only: [:index]
+    resources :sales, only: [:index]
+  end
   resources :drawings do
     resources :purchases, only: [:new, :create]
   end

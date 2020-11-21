@@ -1,0 +1,13 @@
+.drawing-contents {
+  background-color: oldlace;;
+}
+.drawing-contents .drawing-lists li {
+  margin-left: 12px;
+  margin-bottom: 5px;
+  background-color: white;
+  border: solid 1px lightgray;
+}
+
+.drawing-info a {
+  text-decoration: none;
+}

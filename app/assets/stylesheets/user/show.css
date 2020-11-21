@@ -1,0 +1,59 @@
+.content-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.user-wrap .user-header {
+  height: 130px;
+}
+
+.content-wrap .user-name {
+  font-size: 20px;
+}
+
+.user-nav-bar .user-nav {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.user-nav-bar a {
+  text-decoration: none;
+  padding: 20px;
+}
+
+.user-wrap .user-body {
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+  margin: 32px 0;
+  padding: 32px 32px;
+  background-color: oldlace;
+}
+
+.user-wrap .user-body .user-self-intro {
+  width: 60%;
+  height: 240px;
+  padding: 16px;
+  border: solid 1px lightgray;
+  background-color: white;
+  white-space: pre-wrap;
+}
+
+.user-wrap .user-body .user-action-info {
+  width: 32%;
+  padding: 16px;
+  border: solid 1px lightgray;
+  background-color: white;
+  font-size: 12px;
+}
+
+.user-wrap .user-body .user-action-info .user-action-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  height: 36px;
+  border-bottom: dotted 1px lightgray;
+}
