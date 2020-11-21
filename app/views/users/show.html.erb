@@ -22,13 +22,16 @@
           <%= link_to "お仕事依頼", "#", class: "user-nav-link" %>
         </li>
 
-         <li class="user-nav">
+        <% if user_signed_in? && current_user.id == @user.id %>
+        <li class="user-nav">
           <%= link_to "プロフィール変更", edit_user_profile_path(@user.id), class: "user-nav-link" %>
         </li>
 
         <li class="user-nav">
           <%= link_to "設定", edit_user_registration_path(@user.id), class: "user-nav-link" %>
         </li>
+        <% end %>
+        
       </ul>
     </div>
   </div>
