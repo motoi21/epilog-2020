@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update] do
     resources :profiles, only: [:edit, :update]
     resources :posts, only: [:index]
+    resources :sales, only: [:index]
   end
   resources :drawings do
     resources :purchases, only: [:new, :create]
