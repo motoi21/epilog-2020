@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :posts, only: [:index]
     resources :sales, only: [:index]
   end
+  resources :offers, only: [:new]
   resources :drawings do
     resources :purchases, only: [:new, :create]
   end
