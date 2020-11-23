@@ -11,7 +11,7 @@ class CreateOffers < ActiveRecord::Migration[6.0]
       t.string :width
       t.integer :shipping_method_id
       t.references :user, foreign_key: true
-      t.references :creater_id, null: false
+      t.integer :creater_id
       t.timestamps
     end
   end

@@ -60,10 +60,9 @@ ActiveRecord::Schema.define(version: 2020_11_23_023704) do
     t.string "width"
     t.integer "shipping_method_id"
     t.bigint "user_id"
-    t.bigint "creater_id_id", null: false
+    t.integer "creater_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["creater_id_id"], name: "index_offers_on_creater_id_id"
     t.index ["user_id"], name: "index_offers_on_user_id"
   end
 
