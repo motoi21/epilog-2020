@@ -8,7 +8,7 @@
 
       <div class="form-group">
 				<h5 class="input_title"> 依頼先クリエイター: <%= @user.nickname %> </span></h5>
-        <input name="offer[creater_id]" type="hidden" value=<%= @user.id %>>
+        <%= f.hidden_field :creater_id, :value => @user.id %>
 			</div>
 
 			<div class="form-group">
