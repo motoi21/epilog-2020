@@ -50,12 +50,15 @@ ActiveRecord::Schema.define(version: 2020_11_23_023704) do
   end
 
   create_table "offers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "budget", null: false
-    t.string "order_name", null: false
+    t.integer "budget", null: false
+    t.text "order_name", null: false
     t.integer "category_id", null: false
     t.integer "genre_id", null: false
     t.text "detail", null: false
     t.date "deadline", null: false
+    t.string "height"
+    t.string "width"
+    t.integer "shipping_method_id"
     t.bigint "user_id"
     t.bigint "creater_id_id", null: false
     t.datetime "created_at", precision: 6, null: false
