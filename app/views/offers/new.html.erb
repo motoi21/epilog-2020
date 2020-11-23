@@ -6,6 +6,11 @@
 		<%= form_with model: [@user, @offer], local: true do |f| %>
 		<%= render 'shared/error_messages', model: f.object %>
 
+      <div class="form-group">
+				<h5 class="input_title"> 依頼先クリエイター: <%= @user.nickname %> </span></h5>
+        <input name="offer[creater_id]" type="hidden" value=<%= @user.id %>>
+			</div>
+
 			<div class="form-group">
 				<h5 class="input_title"> 依頼名 <span class="required">必須</span></h5>
 				<%= f.text_field :order_name, class: "form-control", maxlength: 40 %>
@@ -14,7 +19,7 @@
 
 			<div class="form-group">
 				<h5 class="input_title"> 依頼内容 <span class="required">必須</span></h5>
-				<%= f.text_area :description, class: "form-control", maxlength: 3000 %>
+				<%= f.text_area :detail, class: "form-control", maxlength: 3000 %>
 				<div class="text-count" id="text-length">
 				  <p class="text-center">現在<span class="text-length">0</span>/3000文字</p>
 				</div>
@@ -26,7 +31,7 @@
     		<div class='input-date-wrap'>
       		<%= raw sprintf(
                   f.date_select(
-                    :production_date,
+                    :deadline,
                     class:'select-date',
                     id:"production-date",
                     use_month_numbers: true,
