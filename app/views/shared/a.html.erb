@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <%= render partial: 'layouts/head' %>
+  <body>
+    <div class="home-main">
+      <div class="home-wrapper">
+        <div class="home-header">
+          <div class="home-header-content">
+            <div class="home-header-top">
+              <div class="top-app-icon-box">
+                <%= image_tag asset_path('full-colle-icon--white.png'), id: 'top-icon' %>
+              </div>
+              <div class="menu">
+                <ul class="menu-list">
+                  <% if user_signed_in? %>
+                    <% if current_user.admin? %>
+                      <li class="menu-option">
+                        <%= link_to 'aaa', new_shop_path %>
+                      </li>
+                    <% end %>
+                    <% if @shop.present? %>
+                      <li class="menu-option">
+                        <%= link_to 'bb', shop_path(@shop) %>
+                      </li>
+                    <% end %>
+                    <li class="menu-option">
+                      <%= link_to 'ccc', user_histories_path(current_user) %>
+                    </li>
+                    <li class="menu-option">
+                      <%= link_to 'ddd', user_shops_path(current_user)               %>
+                    </li>
+                    <li class="menu-option">
+                      <%= link_to 'eee', user_path(current_user) %>
+                    </li>
+                    <li class="menu-option user-nav js-user-nav">
+                      <%= user_icon_present?(current_user) %>
+                      <ul class="user-nav-popup">
+                        <li class="user-nav-option">
+                          <%= link_to(edit_user_registration_path, class: 'option-link')do %>
+                            <span class="option-link-name">setting</span>
+                          <% end %>
+                        </li>
+                        <li class="user-nav-option">
+                          <%= link_to(destroy_user_session_path, method: :delete, class: 'option-link')do %>
+                            <span class="option-link-name">logout</span>
+                          <% end %>
+                        </li>
+                      </ul>
+                    </li>
+                  <% else %>
+                    <li class="menu-option">
+                      <%= link_to 'log', new_user_session_path %>
+                    </li>
+                    <li class="menu-option">
+                      <%= link_to 'keep', new_user_session_path %>
+                    </li>
+                    <li class="menu-option">
+                      <%= link_to 'login', new_user_session_path %>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+            <div class="top-message-box">
+              <h1>epilog</h1>
+            </div>
+            <div class="search-form">
+              <div class="form-explanation">
+                <h2>area keyword</h2>
+              </div>
+              <div class="search-box">
+                <%= search_form_for(@q, url: shops_search_path) do |f| %>
+                  <%= f.text_field :area_name_cont, placeholder: 'example', autocomplete: :off, class: 'search-box__content left-content', id: 'area-search-field'  %>
+                  <%= f.text_field :name_or_outline_or_brands_name_or_genres_name_cont, placeholder: 'keyword', autocomplete: :off, class: 'search-box__content center-content', id: 'keyword-field' %>
+                  <%= select_tag :rate_range, options_from_collection_for_select(RateRange.all, :id, :name), { prompt: "reputation", class: 'search-box__content right-content', id: 'rate-field'} %>
+                  <%= f.submit 'search', class: 'search-box__submit', id: 'search-submit-btn' %>
+                <% end %>
+              </div>
+            </div>
+            <div id="search-result">
+              <div class="candidate-list"></div>
+            </div>
+          </div>
+        </div>
+        <div class="top-wrapper">
+          <%= render "tops/search_content" %>
+          <%= render "tops/side_bar" %>
+        </div>
+        <%= render 'shared/footer' %>
+      </div>
+    </div>
+  </body>
+</html>

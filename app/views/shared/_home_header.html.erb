@@ -1,0 +1,44 @@
+<div class="home-header">
+          <div class="home-header-content">
+            <div class="home-header-top">
+              <div class="top-app-icon-box">
+                <%= link_to image_tag('epilog_logo.png'), root_path, id: 'top-icon' %>
+              </div>
+              <div class="menu">
+                <ul class="menu-list">
+                  <% if user_signed_in? %>
+                    <li class="menu-option">
+                      <%= link_to '新規投稿', new_drawing_path %>
+                    </li>
+                    <li class="menu-option">
+                      <%= link_to '依頼を見る', user_offers_path(current_user.id) %>
+                    </li>
+                    <li class="menu-option">
+                      <%= link_to 'マイページ', user_path(current_user.id) %>
+                    </li>
+                    <li class="menu-option">
+                      <%= link_to '設定', edit_user_registration_path(current_user.id), class: 'option-link'%>
+                    </li>
+                    <li class="menu-option">
+                      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'option-link' %>
+                    </li>
+                  <% else %>
+                    <li class="menu-option">
+                      <%= link_to '新規投稿', new_user_session_path %>
+                    </li>
+                    <li class="menu-option">
+                      <%= link_to '依頼を見る', new_user_session_path %>
+                    </li>
+                    <li class="menu-option">
+                      <%= link_to 'ログイン', new_user_session_path %>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+            <div class="top-message-box">
+              <h1>絵を描く、絵を売る、絵を依頼する「絵ピローグ」</h1>
+            </div>
+            </div>
+          </div>
+        </div>
