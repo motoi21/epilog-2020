@@ -5,7 +5,7 @@ class Offer < ApplicationRecord
   belongs_to_active_hash :genre
   belongs_to_active_hash :shipping_method
 
-  with_options presence: true do
+  with_options presence: { message: "can't be blank" } do
     validates :order_name
     validates :detail
     validates :deadline
