@@ -9,6 +9,7 @@ class Offer < ApplicationRecord
     validates :order_name
     validates :detail
     validates :deadline
+    validates :budget
   end
   with_options numericality: { other_than: 1, message: 'Select' } do
     validates :category_id
