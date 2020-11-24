@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :profiles, only: [:edit, :update]
     resources :posts, only: [:index]
     resources :sales, only: [:index]
+    resources :offers, only: [:index, :new, :create]
   end
   resources :drawings do
     resources :purchases, only: [:new, :create]

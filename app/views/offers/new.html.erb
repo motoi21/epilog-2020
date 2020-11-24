@@ -1,0 +1,108 @@
+<div class="rnw_main">
+
+	<div class="items-sell-main">
+    <h3 class="items-sell-title">依頼の内容を入力</h3>
+
+		<%= form_with model: [@user, @offer], local: true do |f| %>
+		<%= render 'shared/error_messages', model: f.object %>
+
+      <div class="form-group">
+				<h5 class="input_title"> 依頼先クリエイター: <%= @user.nickname %> </span></h5>
+        <%= f.hidden_field :creater_id, :value => @user.id %>
+			</div>
+
+			<div class="form-group">
+				<h5 class="input_title"> 依頼名 <span class="required">必須</span></h5>
+				<%= f.text_field :order_name, class: "form-control", maxlength: 40 %>
+				<small>※最大40文字</small>
+			</div>
+
+			<div class="form-group">
+				<h5 class="input_title"> 依頼内容 <span class="required">必須</span></h5>
+				<%= f.text_area :detail, class: "form-control", maxlength: 3000 %>
+				<div class="text-count" id="text-length">
+				  <!--<p class="text-center">現在<span class="text-length">0</span>/3000文字</p>-->
+				</div>
+
+			</div>
+
+			<div class="form-group">
+    		<h5 class="input_title">期限<span class="required">必須</span></h5>
+    		<div class='input-date-wrap'>
+      		<%= raw sprintf(
+                  f.date_select(
+                    :deadline,
+                    class:'select-date',
+                    id:"production-date",
+                    use_month_numbers: true,
+                    prompt:'--',
+                    start_year: (Time.now.year),
+                    end_year: 2025,
+                    date_separator: '%s'),
+                  "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+    		</div>
+ 		 	</div>
+			<div class="form-group">
+				<h5 class="input_title">カテゴリー<span class="required">必須</span></h5>
+					<div>
+						<%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"drawing-category"}) %>
+					</div>
+			</div>
+
+			<div class="form-group">
+				<h5 class="input_title">ジャンル<span class="required">必須</span></h5>
+					<div>
+						<%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"drawing-genre"}) %>
+					</div>
+			</div>
+			
+			<div class="sell-price">
+      	<div class="weight-bold-text question-text">
+        	<h5 class="input_title">予算
+					<span class="required">必須</span><br>(¥100〜9,999,999)</h5>
+					
+      	</div>
+      	<div>
+        	<div class="price-content">
+          	<div class="price-text">
+            	<span>予算</span>
+           	 <span class="required">必須</span>
+          	</div>
+          	<span class="sell-yen">¥</span>
+          	<%= f.text_field :budget, class:"price-input", id:"item-price", placeholder:"例）100" %>
+        	</div>
+      	</div>
+    	</div>
+
+			<div class="form-group">
+				<h5 class="input_title">希望納品形式 <span class="required not">任意</span></h5>
+				<%= f.collection_select(:shipping_method_id, ShippingMethod.all, :id, :name, {}, {class:"select-box", id:"shipping-method"}) %>
+			</div>
+
+			<div class="form-group">
+				<h5 class="input_title">希望サイズ <span class="required not">任意</span></h5>
+				<div class="row">
+					<div class="size">
+						<div class="input-group">
+							<span class="input-group-addon">横</span>
+								<%= f.text_field :width, class:"form-control", placeholder:"例）150cm, 150px" %>
+						</div>
+					</div>
+					<div class="size">
+						<div class="input-group">
+							<span class="input-group-addon">縦</span>
+								<%= f.text_field :height, class:"form-control", placeholder:"例）150cm, 150px" %>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+			<div class="sell-btn-contents">
+      	<%=link_to 'もどる', user_offers_path(@user.id), class:"back-btn" %>
+				<%= f.submit "依頼する" ,class:"sell-btn" %>
+    	</div>
+
+		<% end %>
+	</div>
+</div>

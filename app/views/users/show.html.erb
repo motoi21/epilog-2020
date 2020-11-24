@@ -19,7 +19,7 @@
         </li>
 
         <li class="user-nav">
-          <%= link_to "お仕事依頼", "#", class: "user-nav-link" %>
+          <%= link_to "お仕事依頼", user_offers_path(@user.id), class: "user-nav-link" %>
         </li>
 
         <% if user_signed_in? && current_user.id == @user.id %>
@@ -31,7 +31,7 @@
           <%= link_to "設定", edit_user_registration_path(@user.id), class: "user-nav-link" %>
         </li>
         <% end %>
-        
+
       </ul>
     </div>
   </div>

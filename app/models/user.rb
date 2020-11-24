@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_one :profile
   has_many :drawings
   has_many :purchases
+  has_many :offers
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
   validates_format_of :password, with: PASSWORD_REGEX

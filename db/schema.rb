@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_11_113611) do
+ActiveRecord::Schema.define(version: 2020_11_23_023704) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -47,6 +47,23 @@ ActiveRecord::Schema.define(version: 2020_11_11_113611) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_drawings_on_user_id"
+  end
+
+  create_table "offers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "budget", null: false
+    t.text "order_name", null: false
+    t.integer "category_id", null: false
+    t.integer "genre_id", null: false
+    t.text "detail", null: false
+    t.date "deadline", null: false
+    t.string "height"
+    t.string "width"
+    t.integer "shipping_method_id"
+    t.bigint "user_id"
+    t.integer "creater_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_offers_on_user_id"
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -96,6 +113,7 @@ ActiveRecord::Schema.define(version: 2020_11_11_113611) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "drawings", "users"
+  add_foreign_key "offers", "users"
   add_foreign_key "profiles", "users"
   add_foreign_key "purchases", "drawings"
   add_foreign_key "purchases", "users"
