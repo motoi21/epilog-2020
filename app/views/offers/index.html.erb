@@ -1,1 +1,8 @@
-<%= link_to 'このユーザーに依頼する', new_user_offer_path(@user.id) %>
+<%= link_to "#{@user.nickname}さんに依頼する", new_user_offer_path(@user.id) %>
+<div class='offer-contents'>
+    <ul class='offer-lists'>
+      <% @offers.each do |offer| %>
+        <%= render partial: 'offers',locals: { offer: offer } %>
+      <% end %>
+    </ul>
+</div>

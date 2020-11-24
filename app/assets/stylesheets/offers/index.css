@@ -1,0 +1,47 @@
+.offer-contents {
+  background-color: oldlace;
+  margin-top: 15px;
+  height: 100vh;
+}
+
+.offer-contents .offer-lists li {
+  margin-left: 12px;
+  margin-bottom: 5px;
+  background-color: white;
+  border: solid 1px lightgray;
+  width: fit-content;
+  float: left;
+}
+
+.offer-contents .offer-lists .list a {
+    text-decoration: none;
+    outline: none !important;
+    transition: all .2s;
+    cursor: pointer;
+}
+
+.offer-contents .offer-lists .list {
+  display: block;
+  position: relative;
+  padding: 10px 15px;
+  margin: 0 0 15px;
+  background: #FFF;
+  border: 1px solid #dedede;
+  border-radius: 5px;
+}
+
+.offer-name-content {
+  font-size: 40px;
+  text-align: center;
+}
+
+.offer-category {
+  display: flex;
+  margin-left: 15px;
+}
+.genre-category {
+  margin-left: 15px;
+}
+.offer-user {
+  text-align: end;
+}
