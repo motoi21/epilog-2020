@@ -1,0 +1,48 @@
+<div class='header'>
+  <div class='header__border'>
+    <div class='header-wrapper'>
+      <div class='header-wrapper__top'>
+        <div class='page-name'></div>
+        <div class='menu'>
+          <ul class="menu-list">
+                  <% if user_signed_in? %>
+                    <li class="menu-option">
+                      <%= link_to '新規投稿', new_drawing_path %>
+                    </li>
+                    <li class="menu-option">
+                      <%= link_to '依頼を見る', user_offers_path(current_user.id) %>
+                    </li>
+                    <li class="menu-option">
+                      <%= link_to 'マイページ', user_path(current_user.id) %>
+                    </li>
+                    <li class="menu-option">
+                      <%= link_to '設定', edit_user_registration_path(current_user.id), class: 'option-link'%>
+                    </li>
+                    <li class="menu-option">
+                      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'option-link' %>
+                    </li>
+                  <% else %>
+                    <li class="menu-option">
+                      <%= link_to '新規投稿', new_user_session_path %>
+                    </li>
+                    <li class="menu-option">
+                      <%= link_to '依頼を見る', new_user_session_path %>
+                    </li>
+                    <li class="menu-option">
+                      <%= link_to 'ログイン', new_user_session_path %>
+                    </li>
+                  <% end %>
+          </ul>
+        </div>
+      </div>
+      <div class="header-wrapper__bottom">
+        <div class="search-form">
+          <div id="app-icon-box">
+            <%= link_to root_path do %>
+              <%= link_to image_tag('epilog_logo.png'), root_path, id: 'header-icon' %>
+            <% end %>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
