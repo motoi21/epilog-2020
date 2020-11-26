@@ -1,3 +1,4 @@
+<%= render "shared/header" %>
 <div class='drawing-contents'>
     <ul class='drawing-lists'>
       <% @user.drawings.where.not(price: nil).each do |drawing| %>

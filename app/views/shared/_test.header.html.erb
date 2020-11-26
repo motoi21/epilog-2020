@@ -1,0 +1,60 @@
+<div class="home-main">
+      <div class="home-wrapper">
+        <div class="home-header">
+          <div class="home-header-content">
+            <div class="home-header-top">
+              <div class="top-app-icon-box">
+                <%= image_tag asset_path('epilog_logo.png'), id: 'top-icon' %>
+              </div>
+              <div class="menu">
+                    <li class="menu-option">
+                      <%= link_to '新規投稿', new_drawing_path %>
+                    </li>
+                    <li class="menu-option">
+                      <%= link_to '依頼を見る', user_offers_path(current_user.id)               %>
+                    </li>
+                    <li class="menu-option">
+                      <%= link_to 'マイページ', user_path(current_user.id) %>
+                    </li>
+                    <li class="menu-option user-nav js-user-nav">
+                      <ul class="user-nav-popup">
+                        <li class="user-nav-option">
+                          <%= link_to(edit_user_registration_path(current_user.id), class: 'option-link')do %>
+                            <span class="option-link-name">設定</span>
+                          <% end %>
+                        </li>
+                        <li class="user-nav-option">
+                          <%= link_to(destroy_user_session_path, method: :delete, class: 'option-link')do %>
+                            <span class="option-link-name">ログアウト</span>
+                          <% end %>
+                        </li>
+                      </ul>
+                    </li>
+                  <% else %>
+                    <li class="menu-option">
+                      <%= link_to '新規投稿', new_user_session_path %>
+                    </li>
+                    <li class="menu-option">
+                      <%= link_to '依頼を見る', new_user_session_path %>
+                    </li>
+                    <li class="menu-option">
+                      <%= link_to 'ログイン', new_user_session_path %>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+            <div class="top-message-box">
+              <h1>絵を描く、絵を売る、絵を依頼する「絵ピローグ」</h1>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="top-wrapper">
+          <%= render "tops/search_content" %>
+          <%= render "tops/side_bar" %>
+        </div>
+        <%= render 'shared/footer' %>
+      </div>
+    </div>
+

@@ -9,10 +9,12 @@
 }
 
 .drawing-contents>.title {
-  font-size: 3vh;
+  font-size: 4vh;
   line-height: 1.4;
   font-weight: bold;
   color: gray;
+  margin: 20px;
+  border-bottom: 2px solid #FF6E3A;
 
 }
 
