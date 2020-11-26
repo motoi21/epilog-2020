@@ -4,7 +4,6 @@
 
     <div class='drawing-contents'>
     <h2 class='title'>新規出品作品</h2>
-      <%= link_to '新規投稿', new_drawing_path, class: "subtitle" %>
     <ul class='drawing-lists'>
       <%  if @drawings_with_price.exists?  %>
         <% @drawings_with_price.each do |drawing| %>
