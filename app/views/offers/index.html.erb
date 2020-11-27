@@ -1,4 +1,40 @@
 <%= render "shared/header" %>
+<div class="user-header">
+    <div class="content-wrap">
+      <div class="user-name">
+        <%= @user.nickname %> のマイページ
+      </div>
+      <ul class="user-nav-bar">
+        <li class="user-nav first-nav">
+          <%= link_to "自己紹介", user_path(@user.id), class: "user-nav-link" %>
+        </li>
+
+        <li class="user-nav">
+          <%= link_to "投稿一覧", user_posts_path(@user.id), class: "user-nav-link" %>
+        </li>
+
+        <li class="user-nav">
+          <%= link_to "出品作品", user_sales_path(@user.id), class: "user-nav-link" %>
+        </li>
+
+        <li class="user-nav">
+          <%= link_to "お仕事依頼", user_offers_path(@user.id), class: "user-nav-link" %>
+        </li>
+
+        <% if user_signed_in? && current_user.id == @user.id %>
+        <li class="user-nav">
+          <%= link_to "プロフィール変更", edit_user_profile_path(@user.id), class: "user-nav-link" %>
+        </li>
+
+        <li class="user-nav">
+          <%= link_to "設定", edit_user_registration_path(@user.id), class: "user-nav-link" %>
+        </li>
+        <% end %>
+
+      </ul>
+    </div>
+</div>
+  <div class="user-header-line"></div>
 <%= link_to "#{@user.nickname}さんに依頼する", new_user_offer_path(@user.id) %>
 <div class='offer-contents'>
     <ul class='offer-lists'>
