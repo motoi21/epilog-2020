@@ -13,6 +13,16 @@
   float: left;
 }
 
+.offer-button {
+  margin-left: 15px;
+  background-color: oldlace;
+  font-size: 20px;
+}
+
+.offer-button a {
+  color: black;
+}
+
 .offer-contents .offer-lists .list a {
     text-decoration: none;
     outline: none !important;
