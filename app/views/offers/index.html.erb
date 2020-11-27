@@ -34,8 +34,10 @@
       </ul>
     </div>
 </div>
-  <div class="user-header-line"></div>
-<%= link_to "#{@user.nickname}さんに依頼する", new_user_offer_path(@user.id) %>
+<div class="user-header-line"></div>
+<div class="offer-button">
+  <%= link_to "#{@user.nickname}さんに依頼する", new_user_offer_path(@user.id) %>
+</div>
 <div class='offer-contents'>
     <ul class='offer-lists'>
       <% @offers.each do |offer| %>
