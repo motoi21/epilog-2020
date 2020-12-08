@@ -2,6 +2,7 @@ class OffersController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @offers = Offer.where(creater_id: @user.id)
+    @profile = Profile.find_by(user_id: @user.id)
   end
 
   def new
